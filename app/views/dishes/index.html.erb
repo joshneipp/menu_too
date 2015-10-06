@@ -5,32 +5,29 @@
 
 <h1><%= course.name %></h1>
 <div><%= image_tag asset_url(course.image), class: "menu-image" %></div>
-<thead>
-
-
+  <thead>
   <% course.dishes.each do |dish| %>
-
-</br>
-      <div class="center link">
-        <%= link_to edit_dish_path(dish) do %>
-        <i class="dish"></i> <%= dish.name %>
-        <% end %>
-      </div>
-      <div class="center">
-        <%= dish.description %>
-      </div>
-      <div>
-        <%= number_to_currency(dish.price) %>
-      </div>
-      </br>
-      </br>
-    
+  </br>
+    <div class="center-link">
+      <%= link_to edit_dish_path(dish) do %>
+      <i class="dish"></i> <%= dish.name %>
+      <% end %>
+    </div>
+    <div class="center">
+      <%= dish.description %>
+    </div>
+    <div>
+      <%= number_to_currency(dish.price) %>
     </br>
-      <td><%= link_to 'delete dish', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-
-  <% end %>
-  </thead>
+    </br>
+    <div class="delete-link">
+      <%= link_to 'delete dish', dish, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+    </div>
+    </br>
+    </br>
+    <% end %>
+    </thead>
 <%= link_to 'new dish', new_dish_path(course_id: course.id) %>
 <% end %>
 

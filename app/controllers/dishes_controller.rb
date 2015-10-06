@@ -9,6 +9,7 @@ class DishesController < ApplicationController
 
   # GET /dishes/1
   def show
+
   end
 
   # GET /dishes/new
@@ -35,7 +36,7 @@ class DishesController < ApplicationController
   # PATCH/PUT /dishes/1
   def update
     if @dish.update(dish_params)
-      redirect_to @dish, notice: 'Dish was successfully updated.'
+      redirect_to dishes_url, notice: 'Dish was successfully updated.'
     else
       render :edit
     end

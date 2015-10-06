@@ -40,6 +40,10 @@ div.center {
    text-decoration: none;
  }
 
+ .delete-link {
+   font-size: 14px;
+ }
+
 tr {
   text-align: center;
 }
