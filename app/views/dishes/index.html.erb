@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<body>
 <% @courses.each do |course| %>
-<table>
+<table class="center">
+
 <h1><%= course.name %></h1>
 <div><%= image_tag asset_url(course.image), class: "menu-image" %></div>
 <thead>
@@ -9,22 +10,29 @@
 
   <% course.dishes.each do |dish| %>
 
-    <tr>
-      <td><%= link_to edit_dish_path(dish) do %>
+</br>
+      <div class="center link">
+        <%= link_to edit_dish_path(dish) do %>
         <i class="dish"></i> <%= dish.name %>
         <% end %>
-      <td><%= dish.name %></td>
-      <td><%= dish.description %></td>
-      <td><%= dish.price %></td>
-      <td><%= dish.course_id %></td>
-      <td><%= link_to 'Show', dish %></td>
+      </div>
+      <div class="center">
+        <%= dish.description %>
+      </div>
+      <div>
+        <%= number_to_currency(dish.price) %>
+      </div>
+      </br>
+      </br>
       <td><%= link_to ' ', edit_dish_path(dish) %></td>
-      <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+    </br>
+      <td><%= link_to 'delete dish', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
 
   <% end %>
   </thead>
-<%= link_to 'New Dish', new_dish_path(course_id: course.id) %>
+<%= link_to 'new dish', new_dish_path(course_id: course.id) %>
 <% end %>
 
 </table>
+</body>

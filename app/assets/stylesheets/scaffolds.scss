@@ -6,6 +6,15 @@ body {
   line-height: 18px;
 }
 
+table {
+  align-items: center;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -20,6 +29,7 @@ pre {
 
 a {
   color: #000;
+  text-decoration: none;
 
   &:visited {
     color: #666;
