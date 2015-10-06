@@ -18,6 +18,7 @@ class DishesController < ApplicationController
 
   # GET /dishes/1/edit
   def edit
+    @dish
   end
 
   # POST /dishes
