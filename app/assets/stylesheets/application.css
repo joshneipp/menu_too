@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ .dish {
+   text-decoration: none;
+ }
+
+.menu-image {
+  width: 300px;
+}
